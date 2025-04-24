@@ -29,6 +29,8 @@ In multi-load systems, power distribution can become inefficient or unstable whe
 - Verified voltage rails, signal paths, and component functionality using multimeter and oscilloscope.
 - Debugged firmware-hardware integration during initial power-up.
 
+![alt text](<Dynamic load balancer images/S1.jpeg>)
+
 ### Testing and Validation
 - Performed load switching tests under varying load scenarios. 
 - Validated dynamic response time and stability during rapid load transitions.
