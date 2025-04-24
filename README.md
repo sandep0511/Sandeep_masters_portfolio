@@ -139,3 +139,103 @@ The goal of this project was to create a low-cost, responsive robotic arm capabl
 - Oscilloscope, DMM, Serial Debugging Tools
 
 ---
+
+## 4. Pong Game with Wireless Control using ATmega328PB and ESP32
+
+A fully functional Pong game implemented on an ATmega328PB microcontroller with real-time LCD rendering, joystick input, and wireless control using ESP32 and the Blynk IoT platform. The game logic, display updates, and communication were all developed using bare-metal C.
+
+---
+
+## Project Overview
+
+This project replicates the classic Pong arcade game in an embedded environment. The game features real-time paddle movement via joystick (Player 2) and remote wireless control (Player 1) over Wi-Fi using an ESP32 module and Blynk. The game runs on bare-metal firmware and communicates via SPI and GPIO interfaces.
+
+---
+
+## My Contributions
+
+### Embedded Game Design
+- Designed and implemented full **game logic** including paddle movement, ball bounce, edge collision, and scoring.
+- Used **bare-metal programming** on the ATmega328PB to ensure tight control of game timing and performance.
+- Rendered game visuals (paddles, ball, score) on an **SPI-connected LCD screen**.
+
+### Hardware Interface & Peripherals
+- Used **joystick (ADC)** to control Player 2's paddle position with smooth analog input.
+- Configured **PWM and GPIO** to drive a buzzer for game event sounds (goal, bounce).
+- Designed simple game menu and screen refresh control using optimized SPI writes.
+
+### Wireless Control Integration
+- Enabled **Player 1 paddle control wirelessly** using an **ESP32 connected via Wi-Fi to the Blynk platform**.
+- Used a logic level shifter to interface 3.3V ESP32 signals with the 5V ATmega328PB safely.
+- Transmitted paddle data over UART or GPIO between ESP32 and ATmega for real-time wireless input.
+
+### Optimization and Testing
+- Tuned game loop timing to maintain consistent frame rates and responsive paddle motion.
+- Calibrated joystick ADC values for precision and accuracy.
+- Validated gameplay smoothness and wireless latency under real conditions.
+
+---
+
+## Tools and Technologies
+
+- ATmega328PB (Bare-Metal C, MPLABX)
+- ESP32 (Wi-Fi Communication, Blynk Platform)
+- LCD Display (SPI)
+- Joystick (ADC)
+- UART, SPI, PWM, GPIO
+- Logic Level Shifting for MCU interfacing
+- Oscilloscope, DMM, Serial Debugging
+
+
+---
+
+## 5. RowHammer Mitigation using PARA (Probabilistic Adjacent Row Activation)
+
+This ongoing project explores the RowHammer vulnerability in DRAM and implements PARA (Probabilistic Adjacent Row Activation) as a mitigation strategy. The goal is to simulate and quantify the effectiveness of PARA in reducing bit flips during aggressive memory access, while evaluating performance trade-offs.
+
+---
+
+## Project Status
+
+**Currently in progress**  
+Actively working on simulation experiments, performance benchmarking, and mitigation strategy evaluation using open-source DRAM simulators.
+
+---
+
+## Objectives
+
+- Understand the behavior of double-sided RowHammer attacks on DRAM.
+- Integrate PARA (Probabilistic Adjacent Row Activation) into DRAM simulation tools.
+- Quantitatively analyze mitigation impact on bit flip rates.
+- Measure and visualize trade-offs in terms of latency and bandwidth overhead.
+
+---
+
+## Working:
+
+### Simulation Setup
+- Set up and configure DRAM simulators such as **DRAMSim2** and **Ramulator** for controlled RowHammer experiments.
+- Create memory access patterns simulating **aggressive row activation** to trigger bit flips in adjacent rows.
+
+### PARA Integration
+- Implement **PARA logic** into the simulator: probabilistically refreshing adjacent rows based on activation frequency.
+- Parameterize the refresh probability to observe trade-offs between mitigation strength and system performance.
+
+### Evaluation and Analysis
+- Collect and compare bit-flip statistics across baseline and PARA-mitigated runs.
+- Measure latency and bandwidth impacts to assess mitigation overhead.
+- Generate **heatmaps and visual reports** to highlight vulnerable regions and PARA effectiveness.
+
+---
+
+## Tools and Technologies
+
+- DRAMSim2 / Ramulator
+- C++, Python (for data analysis)
+- Memory profiling scripts
+- Graphing libraries for heatmap and performance plots (e.g., matplotlib, seaborn)
+
+---
+
+
+
